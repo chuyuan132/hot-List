@@ -6,7 +6,7 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint --fix",
+    "lint": "next lint --fix && prettier -w .",
     "pre-commit": "lint-staged",
     "commitlint": "commitlint --config commitlint.config.cjs -e -V"
   },
@@ -37,7 +37,8 @@
   },
   "lint-staged": {
     "src/**/*.{js,jsx,ts,tsx,json}": [
-      "prettier --write"
+      "next lint --fix",
+      "prettier --w ."
     ]
   }
 }
